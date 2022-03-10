@@ -1,4 +1,7 @@
 package fr.lernejo.guessgame;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import fr.lernejo.logger.*;
 
 
@@ -35,7 +38,18 @@ public class Simulation {
       return false;
     }
   
-    public void loopUntilPlayerSucceed() {
-      while (!nextRound());
+    public void loopUntilPlayerSucceed(long iterationsNumber) {
+      long startDate = System.currentTimeMillis();
+      for (long i = 0; i < iterationsNumber; i++) {
+        if (nextRound()) {
+          break;
+        }
+      }
+      long endDate = System.currentTimeMillis();
+      long gameDuration = endDate - startDate;
+
+      SimpleDateFormat sdf = new SimpleDateFormat("mm:ss.SSS");
+      String formatted = sdf.format(new Date(gameDuration));
+      logger.log("Player needs" + formatted + "to find the Captain age");
     }
   }
