@@ -9,7 +9,7 @@ public class FilteredLogger implements Logger {
     public FilteredLogger(Logger delegate, Predicate<String> condition) {
         this.delegateLogger = delegate;
         this.condition = condition;
-      }
+    }
 
     public void log(String message) {
         if (condition.test(message)) {
