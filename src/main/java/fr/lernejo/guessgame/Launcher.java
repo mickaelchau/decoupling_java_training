@@ -3,7 +3,7 @@ package fr.lernejo.guessgame;
 import java.security.SecureRandom;
 
 public class Launcher {
-    static void main(String[] args){
+    public static void main(String[] args){
         if (args[0] == "-interactive") {
             HumanPlayer player = new HumanPlayer();
             Simulation myGame = new Simulation(player);
