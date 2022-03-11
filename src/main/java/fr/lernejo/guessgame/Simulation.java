@@ -55,6 +55,6 @@ public class Simulation {
 
       SimpleDateFormat sdf = new SimpleDateFormat("mm:ss.SSS");
       String formatted = sdf.format(new Date(gameDuration));
-      logger.log("Player needs " + formatted + " to find the Captain age");
+      logger.log("Player wins ! Player needs " + formatted + " to find the Captain age");
     }
   }

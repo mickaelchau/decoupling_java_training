@@ -18,7 +18,6 @@ public class ComputerPlayer implements Player {
             max = lastAsked;
         }
         lastAsked = (max + min) / 2;
-        logger.log("You has chosen value " + lastAsked);
         return lastAsked;
     }
     public void respond(boolean lowerOrGreater) {
