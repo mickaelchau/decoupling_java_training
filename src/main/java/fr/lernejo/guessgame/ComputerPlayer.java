@@ -21,7 +21,7 @@ public class ComputerPlayer implements Player {
             playerGuess = (100 - lastAsked) / 2 + lastAsked;
         }
         lastAsked = playerGuess;
-        logger.log("You has chosen value" + playerGuess);
+        logger.log("You has chosen value " + playerGuess);
         return playerGuess;
     }
     public void respond(boolean lowerOrGreater) {

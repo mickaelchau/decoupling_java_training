@@ -16,7 +16,7 @@ public class Simulation {
     }
   
     public void initialize(long numberToGuess) {
-      logger.log("Game starts !");
+      logger.log("Simulation initialize with " + numberToGuess);
       this.numberToGuess = numberToGuess;
     }
   
@@ -34,6 +34,11 @@ public class Simulation {
       if (playerNumber > numberToGuess) {
         isLower = false;
       }
+      if (isLower) {
+        logger.log("Player value: " + playerNumber + " is lower than simulation value: " + numberToGuess);
+      } else {
+        logger.log("Player value: " + playerNumber + " is bigger than player value: " + numberToGuess);
+      }
       player.respond(isLower);
       return false;
     }
@@ -50,6 +55,6 @@ public class Simulation {
 
       SimpleDateFormat sdf = new SimpleDateFormat("mm:ss.SSS");
       String formatted = sdf.format(new Date(gameDuration));
-      logger.log("Player needs" + formatted + "to find the Captain age");
+      logger.log("Player needs " + formatted + "to find the Captain age");
     }
   }
