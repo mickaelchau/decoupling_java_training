@@ -12,7 +12,7 @@ public class ComputerPlayer implements Player {
     Scanner stdin = new Scanner(System.in);
 
     public long askNextGuess() {
-        if (!isLower) {
+        if (isLower) {
             min = lastAsked;
         } else {
             max = lastAsked;
