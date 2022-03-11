@@ -7,12 +7,12 @@ public class ComputerPlayer implements Player {
     private final Logger logger = LoggerFactory.getLogger("player");
     private long min = 0;
     private long max = 100;
-    private long lastAsked;
-    private boolean isLower;
+    private long lastAsked = 0;
+    private boolean isLower = true;
     Scanner stdin = new Scanner(System.in);
 
     public long askNextGuess() {
-        if (isLower) {
+        if (!isLower) {
             min = lastAsked;
         } else {
             max = lastAsked;
