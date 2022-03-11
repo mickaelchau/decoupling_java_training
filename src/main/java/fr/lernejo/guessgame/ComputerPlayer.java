@@ -30,5 +30,6 @@ public class ComputerPlayer implements Player {
         } else {
             logger.log("The value is bigger");
         }
+        isLower = lowerOrGreater;
     }
 }

@@ -9,7 +9,7 @@ public class HumanPlayer implements Player {
 
     public long askNextGuess() {
         long playerGuess = stdin.nextLong();
-        logger.log("You has chosen value" + playerGuess);
+        logger.log("You has chosen value " + playerGuess);
         return playerGuess;
     }
     public void respond(boolean lowerOrGreater) {
