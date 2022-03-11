@@ -5,18 +5,14 @@ import java.util.Scanner;
 
 public class ComputerPlayer implements Player {
     private final Logger logger = LoggerFactory.getLogger("player");
-    private long min;
-    private long max;
+    private long min = 0;
+    private long max = 100;
     private long lastAsked;
     private boolean isLower;
-    private boolean firstTime = true;
     Scanner stdin = new Scanner(System.in);
 
     public long askNextGuess() {
-        if (firstTime) {
-            lastAsked = 50;
-            firstTime = false;
-        } else if (!isLower) {
+        if (!isLower) {
             min = lastAsked;
         } else {
             max = lastAsked;
