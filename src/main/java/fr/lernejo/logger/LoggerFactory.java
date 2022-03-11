@@ -2,7 +2,8 @@ package fr.lernejo.logger;
 
 public class LoggerFactory {
     public static Logger getLogger(String name) {
-        Logger newLogger = new ConsoleLogger();
-        return newLogger;
+        FileLogger newFileLogger = new FileLogger("log.txt"); 
+        ContextualLogger newContextualLogger = new ContextualLogger(newFileLogger, name);
+        return newContextualLogger;
     }
 }
