@@ -7,7 +7,7 @@ public class ComputerPlayer implements Player {
     private final Logger logger = LoggerFactory.getLogger("player");
     private long min = 0;
     private long max = 100;
-    private long lastAsked = 0;
+    private long lastAsked = 100;
     private boolean isLower = true;
     Scanner stdin = new Scanner(System.in);
 
