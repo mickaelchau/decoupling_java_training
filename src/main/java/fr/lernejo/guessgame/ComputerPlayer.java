@@ -15,7 +15,7 @@ public class ComputerPlayer implements Player {
         if (firstTime) {
             playerGuess = 50;
             firstTime = false;
-        } else if (isLower) {
+        } else if (!isLower) {
             playerGuess = lastAsked / 2;
         } else {
             playerGuess = (100 - lastAsked) / 2 + lastAsked;
