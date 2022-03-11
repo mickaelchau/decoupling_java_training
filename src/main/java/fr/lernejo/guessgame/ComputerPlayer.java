@@ -5,24 +5,25 @@ import java.util.Scanner;
 
 public class ComputerPlayer implements Player {
     private final Logger logger = LoggerFactory.getLogger("player");
+    private long min;
+    private long max;
     private long lastAsked;
     private boolean isLower;
     private boolean firstTime = true;
     Scanner stdin = new Scanner(System.in);
 
     public long askNextGuess() {
-        long playerGuess = 0;
         if (firstTime) {
-            playerGuess = 50;
+            lastAsked = 50;
             firstTime = false;
         } else if (!isLower) {
-            playerGuess = lastAsked / 2;
+            min = lastAsked;
         } else {
-            playerGuess = (100 - lastAsked) / 2 + lastAsked;
+            max = lastAsked;
         }
-        lastAsked = playerGuess;
-        logger.log("You has chosen value " + playerGuess);
-        return playerGuess;
+        lastAsked = (max + min) / 2;
+        logger.log("You has chosen value " + lastAsked);
+        return lastAsked;
     }
     public void respond(boolean lowerOrGreater) {
         if (lowerOrGreater) {
