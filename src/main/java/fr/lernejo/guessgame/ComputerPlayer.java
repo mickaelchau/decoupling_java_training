@@ -24,7 +24,7 @@ public class ComputerPlayer implements Player {
         if (lowerOrGreater) {
             logger.log("The value is lower");
         } else {
-            logger.log("The value is bigger");
+            logger.log("The value is greater");
         }
         isLower = lowerOrGreater;
     }
