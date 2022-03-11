@@ -4,14 +4,14 @@ import java.security.SecureRandom;
 
 public class Launcher {
     public static void main(String[] args){
-        if (args[0] == "-interactive") {
+        if (args[0].contains("-interactive")) {
             HumanPlayer player = new HumanPlayer();
             Simulation myGame = new Simulation(player);
             SecureRandom random = new SecureRandom();
             long randomNumber = random.nextInt(100); 
             myGame.initialize(randomNumber);
             myGame.loopUntilPlayerSucceed(Long.MAX_VALUE);
-        } else if ((args.length == 2) && (args[0] == "-auto") && isLong(args[1])) {
+        } else if ((args.length == 2) && (args[0].contains("-auto") && isLong(args[1]))) {
             ComputerPlayer player = new ComputerPlayer();
             Simulation myGame = new Simulation(player);
             myGame.initialize(Long.parseLong(args[1]));
